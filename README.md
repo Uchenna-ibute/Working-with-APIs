@@ -1,4 +1,4 @@
-# LeaderBoard-Project
+# Working with APIs
 # 📗 Table of Contents
 
 - [LeaderBoard-Project](#leaderboard-project)
@@ -36,11 +36,15 @@
 - CSS
 - JavaScript
 - Webpack
+- API
 
 
 ### Key Features <a name="Mobile Version of Portfolio"></a>
 
-- **Wire frame of the leader board**
+> Describe between 1-3 key features of the application.
+
+- **Three page web application**
+- **Use two API to display, store and update data**
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -49,7 +53,7 @@
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 
-- [Live Demo Link]()
+- [Live Demo Link](https://uchenna-ibute.github.io/Working-with-APIs/dist)
 
 Please note that the live demo link is not yet active
 
@@ -77,7 +81,7 @@ Clone this repository to your desired folder:
 
  - cd my-folder
 
- - git clone https://github.com/coderacheal/LeaderBoard-Project.git
+ - git clone https://github.com/Uchenna-ibute/Working-with-APIs.git
 
  - Once done, open the index.html file in live server
 
@@ -86,7 +90,9 @@ Clone this repository to your desired folder:
 ### Install
 
 Install this project with:
-
+```sh
+  npm install
+```
  
 
 ### Usage
@@ -131,12 +137,12 @@ A web browser
  
 👤 **Christian**
 
-- GitHub: [@githubhandle]()
+- GitHub: [@githubhandle](https://github.com/hakichris)
 
 
 👤 **Uchenna Ibute**
 
-- GitHub: [@githubhandle]()
+- GitHub: [@githubhandle](https://github.com/Uchenna-ibute)
 
 
 
@@ -157,7 +163,7 @@ A web browser
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/Uchenna-ibute/Working-with-APIs/issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
