@@ -129,6 +129,33 @@ main {
   color: gray;
 }
 
+/* comment styling start here */
+
+.comment img {
+  width: 100%;
+  display: block;
+}
+
+.popup {
+  width: 200vw;
+  height: fit-content;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.name {
+  padding: 1.5rem 0.5rem;
+  border-radius: 5px;
+  border: 1px solid;
+  box-shadow: inset -20px -9px 10px rgb(92 69 69 / 14%);
+  margin-bottom: 15px;
+}
+
+.name h3 {
+  font-size: 1.4rem;
+}
+
 @media screen and (max-width: 800px) {
   .wrap {
     grid-template-columns: repeat(2, 1fr);
