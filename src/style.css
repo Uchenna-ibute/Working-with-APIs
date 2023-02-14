@@ -1,4 +1,136 @@
 * {
-  box-sizing: border-box;
+  padding: 0;
   margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.05rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+header,
+footer {
+  padding: 1rem 3rem;
+  background-color: rgb(36 35 35);
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+}
+
+nav li {
+  list-style: none;
+  margin: 3px;
+}
+
+.hello {
+  display: none;
+}
+
+.comment-and-reservation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50%;
+  margin: auto;
+}
+
+.meal-name-card {
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.comment {
+  color: black;
+  border: 1px solid;
+  padding: 5px 10px;
+}
+
+.reservation {
+  color: black;
+  border: 1px solid;
+  padding: 5px 10px;
+}
+
+.title {
+  font-size: 2rem;
+  margin-bottom: 5rem;
+  letter-spacing: 10px;
+  text-shadow: 1px 3px rgba(128, 128, 128, 0.493);
+}
+
+main {
+  min-height: 100vh;
+}
+
+.meal img {
+  width: 100%;
+  display: block;
+}
+
+.meal {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.name {
+  padding: 1.5rem 0.5rem;
+  border-radius: 5px;
+  border: 1px solid;
+  box-shadow: inset -20px -9px 10px rgb(92 69 69 / 14%);
+  margin-bottom: 15px;
+}
+
+.name h3 {
+  font-size: 1.4rem;
+}
+
+.name h3,
+.total,
+.comment {
+  margin-bottom: 20px;
+}
+
+.name i {
+  margin-left: 20px;
+}
+
+.wrap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.wrap li {
+  list-style: none;
+}
+
+.fa-heart {
+  cursor: pointer;
+}
+
+.fa-heart:hover {
+  color: gray;
+}
+
+@media screen and (max-width: 800px) {
+  .wrap {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
