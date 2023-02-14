@@ -8,9 +8,12 @@ export const display = (meal, likes, index) => {
     <img src="${meal.strMealThumb}" alt="food">
   </div>
   <div class="name">
-    <h3>${meal.strMeal} <i class="fa-solid fa-heart" id="heart" data-id = "${index}"></i></h3>
+    <p class='meal-name-card'>${meal.strMeal} <i class="fa-solid fa-heart" id="heart" data-id = "${index}"></i></p>
     <p class="total"> <span class='like'>${likes}</span> likes</p>
-    <a href="#" class="comment" data-id = "${index}">Comment</a>
+    <div class="comment-and-reservation">
+      <a href="#" class="comment" data-id = "${index}">Comment</a>
+      <a href="#" class="reservation">Reservation</a>
+    </div>
   </div>
   </div>`;
   const item = document.createElement('li');
