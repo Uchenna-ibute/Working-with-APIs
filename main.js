@@ -116,7 +116,37 @@ eval("\n\n/* istanbul ignore next  */\nfunction styleTagTransform(css, styleElem
   \**********************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n\n\n//# sourceURL=webpack://working-with-apis/./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./style.css */ \"./src/style.css\");\n/* harmony import */ var _modules_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/api.js */ \"./src/modules/api.js\");\n/* harmony import */ var _modules_like_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/like.js */ \"./src/modules/like.js\");\n/* harmony import */ var _modules_home_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./modules/home.js */ \"./src/modules/home.js\");\n\n\n\n\n\n(0,_modules_api_js__WEBPACK_IMPORTED_MODULE_1__.meals)().then(async (data) => {\n  const meal = [...data.meals];\n  const size = meal.length;\n  const total = document.querySelector('.total');\n  const likedItem = await (0,_modules_like_js__WEBPACK_IMPORTED_MODULE_2__.likeItem)();\n  total.innerText = size;\n  meal.forEach((value, index) => {\n    let liked = 0;\n    likedItem.forEach((dat) => {\n      if (index === dat.item_id) {\n        liked = dat.likes;\n      }\n    });\n    (0,_modules_home_js__WEBPACK_IMPORTED_MODULE_3__.display)(value, liked, index);\n  });\n  const heart = document.querySelectorAll('#heart');\n  heart.forEach((a) => {\n    a.addEventListener('click', async () => {\n      const { id } = a.dataset;\n      await (0,_modules_like_js__WEBPACK_IMPORTED_MODULE_2__.incrementLikes)(parseInt(id, 10));\n      const contain = a.parentElement.parentElement;\n      const itemlike = contain.querySelector('.like');\n      const currentCount = parseInt(itemlike.innerText, 10);\n      itemlike.innerText = currentCount + 1;\n    });\n  });\n});\n\n\n//# sourceURL=webpack://working-with-apis/./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/modules/api.js":
+/*!****************************!*\
+  !*** ./src/modules/api.js ***!
+  \****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"dataid\": () => (/* binding */ dataid),\n/* harmony export */   \"meals\": () => (/* binding */ meals)\n/* harmony export */ });\nconst meals = async () => {\r\n  const res = await fetch(\r\n    'https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast',\r\n  );\r\n  const data = await res.json();\r\n  return data;\r\n};\r\n\r\nconst dataid = async () => {\r\n  const res = await fetch(\r\n    'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/',\r\n    { method: 'post' },\r\n  );\r\n  const data = await res.text();\r\n  return data;\r\n};\r\n\r\ndataid();\r\n\n\n//# sourceURL=webpack://working-with-apis/./src/modules/api.js?");
+
+/***/ }),
+
+/***/ "./src/modules/home.js":
+/*!*****************************!*\
+  !*** ./src/modules/home.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"addLike\": () => (/* binding */ addLike),\n/* harmony export */   \"display\": () => (/* binding */ display)\n/* harmony export */ });\n/* harmony import */ var _like_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./like.js */ \"./src/modules/like.js\");\n\n\nconst display = (meal, likes, index, reservation) => {\n  const list = document.querySelector('.wrap');\n  const html = `\n  <div id=\"meals>\n  <div class=\"item\">\n    <img src=\"${meal.strMealThumb}\" alt=\"food\">\n  </div>\n  <div class=\"name\">\n    <h3>${meal.strMeal} <i class=\"fa-solid fa-heart\" id=\"heart\" data-id = \"${index}\"></i></h3>\n    <p class=\"total\"> <span class='like'>${likes}</span> likes</p>\n    <a href=\"#\" class=\"comment\" data-id = \"${index}\">Comment</a>\n    <a href=\"#\" class=\"reservation\">Reservation</a>\n  </div>\n  </div>`;\n  const item = document.createElement('li');\n  item.setAttribute('data-id', meal.id);\n  item.classList.add('list');\n  item.innerHTML = html;\n  list.appendChild(item);\n};\n\nconst addLike = (like, index) => {\n  like.forEach((item, i) => {\n    item.addEventListener('click', () => {\n      if (i === index) {\n        (0,_like_js__WEBPACK_IMPORTED_MODULE_0__.incrementLikes)(index);\n        const contain = item.parentElement.parentElement;\n        const itemlike = contain.querySelector('.like');\n        const currentCount = parseInt(itemlike.innerText, 10);\n        itemlike.innerText = currentCount + 1;\n      }\n    });\n  });\n};\n\n\n//# sourceURL=webpack://working-with-apis/./src/modules/home.js?");
+
+/***/ }),
+
+/***/ "./src/modules/like.js":
+/*!*****************************!*\
+  !*** ./src/modules/like.js ***!
+  \*****************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   \"incrementLikes\": () => (/* binding */ incrementLikes),\n/* harmony export */   \"likeItem\": () => (/* binding */ likeItem)\n/* harmony export */ });\nconst incrementLikes = async (index) => {\r\n  const res = await fetch(\r\n    'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KHwd97Kg4JUFks1Mpn4d/likes',\r\n    {\r\n      method: 'post',\r\n      body: JSON.stringify({ item_id: index }),\r\n      headers: { 'content-type': 'application/json' },\r\n    },\r\n  );\r\n  const predata = res.text();\r\n  return predata;\r\n};\r\n\r\nconst likeItem = async () => {\r\n  const res = await fetch(\r\n    'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KHwd97Kg4JUFks1Mpn4d/likes',\r\n  );\r\n  const predata = res.json();\r\n  return predata;\r\n};\r\n\n\n//# sourceURL=webpack://working-with-apis/./src/modules/like.js?");
 
 /***/ })
 
