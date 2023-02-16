@@ -1,6 +1,12 @@
-const countcoment = (arr) => {
-    const count = arr.length;
-    return count;
+const countcoments = (arr) => {
+     const comments = arr;
+     let count = 0;
+     comments.forEach((item) =>{ 
+       if(item.comment !== "") { 
+         count += 1     
+       }
+     }) 
+     return count;
   };
 
-  module.export = countcoment;
+  module.exports = countcoments;
