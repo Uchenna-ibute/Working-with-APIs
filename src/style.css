@@ -170,6 +170,18 @@ li {
   align-items: center;
 }
 
+.count {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.close {
+  z-index: 1;
+  width: fit-content;
+  height: fit-content;
+}
+
 .name h3 {
   font-size: 1.4rem;
 }

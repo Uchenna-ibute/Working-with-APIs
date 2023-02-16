@@ -21,7 +21,7 @@ export const saveData = async (id, username, comment) => {
   export const getData = async (id) => {
     const url = 'https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/4MVrrJK7zcMBj3JVTSQH/comments';
     const indentifierurl = `${url}?item_id=${id}`
-    const response = await fetch(indentifierurl, {});
+    const response = await fetch(indentifierurl,);
     const res = response.json();
     return res
   }
