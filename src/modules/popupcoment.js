@@ -24,8 +24,9 @@ const addcomment = (index) => {
   });
 };
 
-export const countcoment = async (index) => {
+const countcoment = async (index) => {
   const coment = await getData(index);
+  console.log(coment);
   let count = coment.length;
   return count;
 };
@@ -87,3 +88,5 @@ export const displaycommentPopup = async (meal, likes, index) => {
     });
   });
 };
+
+module.export;
