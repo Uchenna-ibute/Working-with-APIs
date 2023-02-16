@@ -21,14 +21,20 @@ const addcomment = (index) => {
     username.value = '';
     comment.value = '';
     displaycomment(index);
+    countcoment(index);
   });
 };
 
 const countcoment = async (index) => {
-  const coment = await getData(index);
-  console.log(coment);
-  let count = coment.length;
-  return count;
+  const comments = await getData(index);
+  let count = 0;
+  comments.forEach((item) => {
+    if (item.comment !== '') {
+      count += 1;
+    }
+  });
+  const addcount = document.querySelector('.number');
+  addcount.innerHTML = `${count}`;
 };
 
 const closePop = () => {
@@ -48,7 +54,8 @@ export const displaycommentPopup = async (meal, likes, index) => {
   addcoment.forEach((pop) => {
     pop.addEventListener('click', async () => {
       if (Number(pop.id) === index) {
-        const totalcount = await countcoment(index);
+        // const totalcount = await countcoment(index);
+        countcoment(index);
         const list = document.querySelector('.popup');
         const html = `
     <div class="item">
@@ -61,7 +68,7 @@ export const displaycommentPopup = async (meal, likes, index) => {
     </div>
     <div class="addcoment flexcolumn">
     <h3 class="count">comment
-    <span class="number">${totalcount}</span>
+    <span class="number"> </span>
     </h3>
     </div>
     <div class="displaycomment flexcolumn"> </div>
@@ -81,7 +88,6 @@ export const displaycommentPopup = async (meal, likes, index) => {
         mealblur.style.filter = 'blur(10px)';
 
         closePop();
-
         addcomment(index);
         displaycomment(index);
       }
