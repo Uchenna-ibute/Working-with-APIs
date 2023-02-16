@@ -2,9 +2,7 @@ import './style.css';
 import { meals } from './modules/api.js';
 import { likeItem, incrementLikes } from './modules/like.js';
 import { display } from './modules/home.js';
-// import { getData } from './modules/APIcoment';
-import {displaycommentPopup} from './modules/popupcoment';
-import {countcoment} from './modules/countercoment';
+import { displaycommentPopup } from './modules/popupcoment';
 
 meals().then(async (data) => {
   const meal = [...data.meals];
@@ -21,8 +19,8 @@ meals().then(async (data) => {
     });
     display(value, liked, index);
     // popup start here
-     displaycommentPopup(value, liked, index);
-     // popup ends here
+    displaycommentPopup(value, liked, index);
+    // popup ends here
   });
   const heart = document.querySelectorAll('#heart');
   heart.forEach((a) => {
@@ -35,5 +33,4 @@ meals().then(async (data) => {
       itemlike.innerText = currentCount + 1;
     });
   });
-
 });
