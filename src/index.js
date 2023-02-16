@@ -2,6 +2,12 @@ import './style.css';
 import { meals } from './modules/api.js';
 import { likeItem, incrementLikes } from './modules/like.js';
 import { display } from './modules/home.js';
+import {
+  displayReservation, countReservation, displayReservationPopUp, postYourReservation } from './modules/reservation.js';
+
+const list = document.querySelector('.wrap');
+const reservationPopup = document.querySelector('.reservation-popup-section');
+const overlay = document.querySelector('.overlay');
 
 meals().then(async (data) => {
   const meal = [...data.meals];
@@ -11,6 +17,7 @@ meals().then(async (data) => {
   total.innerText = size;
   meal.forEach((value, index) => {
     let liked = 0;
+    // console.log(value, index)
     likedItem.forEach((dat) => {
       if (index === dat.item_id) {
         liked = dat.likes;
@@ -18,6 +25,7 @@ meals().then(async (data) => {
     });
     display(value, liked, index);
   });
+
   const heart = document.querySelectorAll('#heart');
   heart.forEach((a) => {
     a.addEventListener('click', async () => {
@@ -30,3 +38,41 @@ meals().then(async (data) => {
     });
   });
 });
+
+list.addEventListener('click', async (event) => {
+  if (event.target.className === 'reservation') {
+    // overlay.style.opacity = 1;
+    const response = await meals();
+    const mealInfo = [...response.meals];
+    mealInfo.forEach((meal) => {
+      if (event.target.id === meal.idMeal) {
+        displayReservationPopUp(meal);
+        overlay.style.opacity = 1;
+        displayReservation(event.target.id);
+        // countReservation(event.target.id);
+      }
+    });
+  }
+});
+
+reservationPopup.addEventListener('click', (event) => {
+  if (event.target.className === 'pop-up-close-btn') {
+    overlay.style.opacity = 0;
+    reservationPopup.style.display = 'none';
+  }
+});
+
+reservationPopup.addEventListener('click', (event) => {
+  if (event.target.className === 'reserve-button') {
+    const name = document.getElementById('name').value;
+    const start = document.getElementById('start').value;
+    const end = document.getElementById('end').value;
+    const reservationId = event.target.id;
+    postYourReservation(reservationId, name, start, end);
+    displayReservation(reservationId);
+  }
+});
+
+// window.addEventListener('load', () => {
+//   reservationPopup.style.display = 'none';
+// });

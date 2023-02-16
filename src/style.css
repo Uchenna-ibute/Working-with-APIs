@@ -77,6 +77,10 @@ main {
   min-height: 100vh;
 }
 
+a {
+  cursor: pointer;
+}
+
 .meal img {
   width: 100%;
   display: block;
@@ -127,6 +131,165 @@ main {
 
 .fa-heart:hover {
   color: gray;
+}
+
+.reservation-popup-section {
+  display: none;
+  position: fixed;
+  top: 10px;
+  right: 10%;
+  left: 10%;
+  flex-direction: column;
+  z-index: 3;
+  height: 710px;
+  width: 70%;
+  margin: auto;
+  /* background-color: rgb(255, 196, 196); */
+  background-color: white;
+  overflow: auto;
+  margin-bottom: 20px;
+  border-radius: 15px;
+  padding-bottom: 30px;
+  border: 2px solid rgb(3, 187, 3);
+}
+
+.reservation-popup {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+}
+
+.food-image-popup {
+  border-radius: 50%;
+  height: 350px;
+  margin-top: 15px;
+  margin-left: 50px;
+}
+
+.image-close-btn {
+  display: flex;
+}
+
+.pop-up-close-btn {
+  font-size: 50px;
+  font-weight: bold;
+  position: relative;
+  left: 250px;
+  top: 20px;
+  cursor: pointer;
+  color: #017533;
+}
+
+.reservation-card {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  /* background-color: rgb(255, 196, 196); */
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.all-reservations {
+  height: 200px;
+  width: 400px;
+  overflow: auto;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.form {
+  align-self: flex-start;
+  margin-right: -100px;
+}
+
+input {
+  padding: 7px;
+  margin: 0;
+  width: 290px;
+  background-color: rgb(2, 214, 2);
+  /* border: 2px solid rgb(2, 214, 2); */
+}
+
+.reserve-button {
+  border: 0;
+  width: 100px;
+  outline: none;
+  color: black;
+  border-radius: 25px;
+  border: 0;
+  font-weight: bold;
+  transition: 1s;
+  background-color: white;
+  background-color: rgb(56, 226, 56);
+  cursor: pointer;
+}
+
+.reserve-button:active {
+  background-color: rgb(56, 226, 56);
+  color: white;
+}
+
+.reserve-button:hover {
+  background-color:rgb(87, 86, 86);
+  color: rgb(56, 226, 56);
+}
+
+.spacing-in-popup {
+  margin: 4px;
+}
+
+.h2-size {
+  font-weight: 24px;
+}
+
+.input{
+  padding: 10px 45px;
+  width: 290px;
+  outline: none;
+  color: black;
+  border-radius: 25px;
+  text-align: center;
+  border: 0;
+  background-color: rgb(178, 237, 178);
+  transition: 1s;
+}
+
+.input:hover {
+  background-color: rgb(249, 212, 212);
+}
+
+
+.input:focus{
+  border-color: #6fb98f;
+  color: black;
+}
+
+.p-font-size {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.all-contibutors {
+  display: flex;
+  flex-direction: column;
+}
+
+.creator:hover {
+  text-decoration: underline;
+  font-weight: lighter;
+}
+
+.overlay {
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.9);
+  pointer-events: none;
 }
 
 @media screen and (max-width: 800px) {

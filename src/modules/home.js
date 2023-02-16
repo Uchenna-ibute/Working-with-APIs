@@ -11,8 +11,8 @@ export const display = (meal, likes, index) => {
     <p class='meal-name-card'>${meal.strMeal} <i class="fa-solid fa-heart" id="heart" data-id = "${index}"></i></p>
     <p class="total"> <span class='like'>${likes}</span> likes</p>
     <div class="comment-and-reservation">
-      <a href="#" class="comment" data-id = "${index}">Comment</a>
-      <a href="#" class="reservation">Reservation</a>
+      <a class="comment" data-id = "${index}">Comment</a>
+      <a class="reservation" id=${meal.idMeal}>Reservation</a>
     </div>
   </div>
   </div>`;
