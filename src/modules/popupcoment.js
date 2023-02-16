@@ -2,7 +2,6 @@ import { saveData, getData } from './APIcoment';
 
 const displaycomment = async (index) => {
   const comentData = await getData(index);
-  console.log(comentData);
   const displaycomm = document.querySelector('.displaycomment');
   comentData.forEach((coment) => {
     const eachComment = document.createElement('p');
