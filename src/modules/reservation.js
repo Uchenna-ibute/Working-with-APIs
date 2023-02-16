@@ -1,6 +1,14 @@
 const reservationPopup = document.querySelector('.reservation-popup-section');
 
-export const displayReservationPopUp = (mealObject) => {
+export const countReservation = async (itemId) => {
+  const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KHwd97Kg4JUFks1Mpn4d/reservations?item_id=${itemId}`);
+  const allResevations = await response.json();
+  const counter = allResevations.length;
+  return counter;
+};
+
+export const displayReservationPopUp = async (mealObject) => {
+  const countOfReservation = await countReservation(mealObject.idMeal);
   reservationPopup.style.display = 'flex';
   reservationPopup.innerHTML = `
   <div class="reservation-popup">
@@ -10,12 +18,12 @@ export const displayReservationPopUp = (mealObject) => {
         <p class="pop-up-close-btn">&#10005;</p>
       </div>
     <h2 class="spacing-in-popup h2-size" id='popup-unique-name'>${mealObject.strMeal}</h2>
-    <p class="spacing-in-popup p-font-size">Reservations (0)</p>
+    <p class="spacing-in-popup p-font-size" id="reserved-number" >Reservations (${countOfReservation})</p>
     <p class="spacing-in-popup p-font-size">Add a Reservation</p>
     <div class='all-reservations' id="all-reservations">
     </div>
     <div>
-      <form action="">
+      <form action="" id="form">
         <input type="text" placeholder="Your name" class="input" id="name"><br><br>
         <input placeholder="Start Date" type="text" onfocus="(this.type = 'date')" id="start" class="input"><br><br>
         <input placeholder="End Date" type="text" onfocus="(this.type = 'date')" id="end" class="input"><br><br>
@@ -42,21 +50,22 @@ export const postYourReservation = async (reservationId, username, dateStart, da
 };
 
 export const displayReservation = async (itemId) => {
-  const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KHwd97Kg4JUFks1Mpn4d/reservations?item_id=${itemId}`);
+  const reservationURL = `https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KHwd97Kg4JUFks1Mpn4d/reservations?item_id=${itemId}`;
+  const response = await fetch(reservationURL);
   const allResevations = await response.json();
+  const reservespace = document.getElementById('all-reservations');
   allResevations.forEach((reservation) => {
-    const reservespace = document.getElementById('all-reservations');
     const newReservation = document.createElement('p');
+    newReservation.textContent = `${reservation.date_start} - ${reservation.date_end} by ${reservation.username}`;
     reservespace.appendChild(newReservation);
-    newReservation.textContent = `${reservation.date_start} - ${reservation.date_end} by ${reservation.username}`
-    // const counter = allResevations.length;
-    // return counter;
   });
 };
 
-export const countReservation = async (itemId) => {
-  const response = await fetch(`https://us-central1-involvement-api.cloudfunctions.net/capstoneApi/apps/KHwd97Kg4JUFks1Mpn4d/reservations?item_id=${itemId}`);
-  const allResevations = await response.json();
-  let counter = allResevations.length;
-  return counter;
+export const resetFormAndReservationDiv = (event) => {
+  if (event.target.className === 'reserve-button') {
+    const form = document.getElementById('form');
+    form.reset();
+    const reservespace = document.getElementById('all-reservations');
+    reservespace.innerHTML = '';
+  }
 };

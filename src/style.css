@@ -19,6 +19,7 @@ footer {
 a {
   text-decoration: none;
   color: white;
+  cursor: pointer;
 }
 
 nav {
@@ -54,16 +55,36 @@ nav li {
   font-weight: bold;
 }
 
+.name h3,
+.total,
+.comment {
+  margin-bottom: 20px;
+}
+
 .comment {
   color: black;
   border: 1px solid;
-  padding: 5px 10px;
+  padding: 10px 15px;
+  transition: 1s ease-in;
+  font-weight: bold;
+}
+
+.comment:hover {
+  background-color: rgb(2, 214, 2);
+  color: white;
 }
 
 .reservation {
   color: black;
   border: 1px solid;
-  padding: 5px 10px;
+  padding: 10px 15px;
+  font-weight: bold;
+  transition: 1s ease-in;
+}
+
+.reservation:hover {
+  background-color: rgb(2, 214, 2);
+  color: white;
 }
 
 .title {
@@ -75,10 +96,6 @@ nav li {
 
 main {
   min-height: 100vh;
-}
-
-a {
-  cursor: pointer;
 }
 
 .meal img {
@@ -103,12 +120,6 @@ a {
 
 .name h3 {
   font-size: 1.4rem;
-}
-
-.name h3,
-.total,
-.comment {
-  margin-bottom: 20px;
 }
 
 .name i {
@@ -144,7 +155,6 @@ a {
   height: 710px;
   width: 70%;
   margin: auto;
-  /* background-color: rgb(255, 196, 196); */
   background-color: white;
   overflow: auto;
   margin-bottom: 20px;
@@ -161,7 +171,7 @@ a {
 
 .food-image-popup {
   border-radius: 50%;
-  height: 350px;
+  height: 250px;
   margin-top: 15px;
   margin-left: 50px;
 }
@@ -184,6 +194,7 @@ a {
   width: 100%;
   height: 100%;
   margin: auto;
+
   /* background-color: rgb(255, 196, 196); */
   background-color: white;
   display: flex;
@@ -209,11 +220,11 @@ input {
   margin: 0;
   width: 290px;
   background-color: rgb(2, 214, 2);
+
   /* border: 2px solid rgb(2, 214, 2); */
 }
 
 .reserve-button {
-  border: 0;
   width: 100px;
   outline: none;
   color: black;
@@ -232,7 +243,7 @@ input {
 }
 
 .reserve-button:hover {
-  background-color:rgb(87, 86, 86);
+  background-color: rgb(87, 86, 86);
   color: rgb(56, 226, 56);
 }
 
@@ -241,10 +252,10 @@ input {
 }
 
 .h2-size {
-  font-weight: 24px;
+  font-size: 24px;
 }
 
-.input{
+.input {
   padding: 10px 45px;
   width: 290px;
   outline: none;
@@ -260,8 +271,7 @@ input {
   background-color: rgb(249, 212, 212);
 }
 
-
-.input:focus{
+.input:focus {
   border-color: #6fb98f;
   color: black;
 }
@@ -288,7 +298,7 @@ input {
   bottom: 0;
   right: 0;
   left: 0;
-  background-color: rgba(0,0,0,0.9);
+  background-color: rgba(0, 0, 0, 0.9);
   pointer-events: none;
 }
 

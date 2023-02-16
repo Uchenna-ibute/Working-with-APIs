@@ -3,7 +3,9 @@ import { meals } from './modules/api.js';
 import { likeItem, incrementLikes } from './modules/like.js';
 import { display } from './modules/home.js';
 import {
-  displayReservation, countReservation, displayReservationPopUp, postYourReservation } from './modules/reservation.js';
+  displayReservation, countReservation, displayReservationPopUp,
+  postYourReservation, resetFormAndReservationDiv,
+} from './modules/reservation.js';
 
 const list = document.querySelector('.wrap');
 const reservationPopup = document.querySelector('.reservation-popup-section');
@@ -17,7 +19,6 @@ meals().then(async (data) => {
   total.innerText = size;
   meal.forEach((value, index) => {
     let liked = 0;
-    // console.log(value, index)
     likedItem.forEach((dat) => {
       if (index === dat.item_id) {
         liked = dat.likes;
@@ -41,7 +42,6 @@ meals().then(async (data) => {
 
 list.addEventListener('click', async (event) => {
   if (event.target.className === 'reservation') {
-    // overlay.style.opacity = 1;
     const response = await meals();
     const mealInfo = [...response.meals];
     mealInfo.forEach((meal) => {
@@ -49,7 +49,6 @@ list.addEventListener('click', async (event) => {
         displayReservationPopUp(meal);
         overlay.style.opacity = 1;
         displayReservation(event.target.id);
-        // countReservation(event.target.id);
       }
     });
   }
@@ -62,14 +61,20 @@ reservationPopup.addEventListener('click', (event) => {
   }
 });
 
-reservationPopup.addEventListener('click', (event) => {
+reservationPopup.addEventListener('click', async (event) => {
   if (event.target.className === 'reserve-button') {
     const name = document.getElementById('name').value;
     const start = document.getElementById('start').value;
     const end = document.getElementById('end').value;
     const reservationId = event.target.id;
-    postYourReservation(reservationId, name, start, end);
-    displayReservation(reservationId);
+    if (name && start && end) {
+      await postYourReservation(reservationId, name, start, end);
+      resetFormAndReservationDiv(event);
+      await displayReservation(reservationId);
+      const count = await countReservation(event.target.id);
+      const reservationNumber = document.getElementById('reserved-number');
+      reservationNumber.innerHTML = `Reservations (${count})`;
+    }
   }
 });
 
