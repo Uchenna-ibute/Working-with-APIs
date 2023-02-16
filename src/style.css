@@ -117,7 +117,7 @@ main {
   gap: 2rem;
 }
 
-.wrap li {
+li {
   list-style: none;
 }
 
@@ -137,19 +137,37 @@ main {
 }
 
 .popup {
-  width: 200vw;
-  height: fit-content;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+  position: fixed;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 40%;
+  height: 90%;
+  left: 30%;
+  top: 5%;
+  right: 5%;
+  bottom: 5%;
+  background: rgb(225, 222, 222);
+  border: 1px solid #dfe1e6;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  z-index: 22;
+  display: none;
 }
 
-.name {
-  padding: 1.5rem 0.5rem;
-  border-radius: 5px;
-  border: 1px solid;
-  box-shadow: inset -20px -9px 10px rgb(92 69 69 / 14%);
-  margin-bottom: 15px;
+.popupimg {
+  align-self: center;
+  width: 40vw;
+  height: 60vh;
+  border-radius: 16px;
+}
+
+.flexcolumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .name h3 {
