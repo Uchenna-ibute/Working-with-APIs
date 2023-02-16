@@ -3,8 +3,7 @@
  */
 /* eslint-disable import/no-unresolved */
 import homePageCount from '../modules/homePage.js';
-import countcoment from '../modules/coutcoment.js';
-
+const countcoments = require('../modules/countcoment');
 
 describe('test for meal and coment: ', () => {
   test('9 meals Added', () => {
@@ -28,8 +27,23 @@ describe('test for meal and coment: ', () => {
   });
 
   test('count comment', () => {
-    const arr = [{coment1: "chris"}, {coment2: "26"}, {coment3:"178 cm"}, {coment4: "Bwiza"},{coment5: "no"}]
-    const count = countcoment(arr)
-    expect(count).toBe(5);
+    const arr = [
+      { comment: 'chris', age: '26' },
+      { comment: '178 cm' },
+      { address: 'Bwiza', comment: '' },
+      { comment: '', status: 'no', tel: '54673' },
+    ];
+    const count = countcoments(arr);
+    expect(count).toBe(2);
+  });
+  test('count comment', () => {
+    const arr = [
+      { name: 'chris', age: '26', comment: '' },
+      { height: '178 cm', comment: '' },
+      { address: 'Bwiza', comment: '' },
+      { status: 'no', tel: '54673', comment: '' },
+    ];
+    const count = countcoments(arr);
+    expect(count).toBe(0);
   });
 });
