@@ -13,8 +13,7 @@ const displaycomment = async (index) => {
 const addcomment = (index) => {
   const adding = document.getElementById('submit');
   const item_id = Number(index);
-  adding.addEventListener('submit', async (e) => {
-    console.log("element submitted")
+  adding.addEventListener('click', async (e) => {
     const username = document.getElementById('name');
     const comment = document.getElementById('comment');
     if(username.value && comment.value !== ""){
@@ -83,7 +82,7 @@ export const displaycommentPopup = async (meal, likes, index) => {
     <form id="form" class="flexcolumn form">
     <input type="text" id='name' placeholder='Your name' required>
     <input type="text" id='comment' placeholder='Your insights' required>
-    <button type="submit" id="submit">Submit</button>
+    <button type="button" id="submit">Submit</button>
     </form>
     </div>`;
         const item = document.createElement('li');
