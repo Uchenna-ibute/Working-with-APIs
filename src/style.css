@@ -156,6 +156,7 @@ main {
   width: 70%;
   margin: auto;
   background-color: white;
+
   /* overflow: auto; */
   margin-bottom: 20px;
   border-radius: 15px;
@@ -311,7 +312,7 @@ input {
     position: absolute;
     left: 90%;
     z-index: 5;
-    }
+  }
 
   .all-reservations {
     height: 200px;
@@ -324,10 +325,10 @@ input {
 
 @media (max-width: 430px) {
   .pop-up-close-btn {
-  font-size: 20px;
-  position: absolute;
-  left: 80%;
-  z-index: 5;
+    font-size: 20px;
+    position: absolute;
+    left: 80%;
+    z-index: 5;
   }
 
   form {
@@ -338,7 +339,7 @@ input {
     padding: 7px;
     width: 80%;
   }
-  
+
 
   .food-image-popup {
     border-radius: 50%;
@@ -355,5 +356,3 @@ input {
     text-align: center;
   }
 }
-
-
