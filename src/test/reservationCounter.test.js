@@ -1,6 +1,13 @@
+/**
+ * @jest-environment jsdom
+ */
+/* eslint-disable import/no-unresolved */
+
+// const { nonAsyncCounter } = require('../modules/reservationCounter.js');
+
 jest.mock('../modules/reservationCounter.js');
 
-const { countReservation } = require('../modules/reservationCounter.js');
+const { countReservation, nonAsyncCounter } = require('../modules/reservationCounter.js');
 
 describe('test reservation counter', () => {
   test('number of reservations should be 2 ', () => {
@@ -42,5 +49,18 @@ describe('test reservation counter', () => {
         expect(reservation).toBeTruthy();
       }
     });
+  });
+});
+
+describe('Testing non async reservation counter', () => {
+  test('length should be equal to 3 ', () => {
+    document.body.innerHTML = `
+    <p class="reservation"></p>
+    <p class="reservation"></p>
+    <p class="reservation"></p>
+    `;
+    const reservations = document.querySelectorAll('.reservation');
+    const total = nonAsyncCounter(reservations);
+    expect(total).toBe(3);
   });
 });

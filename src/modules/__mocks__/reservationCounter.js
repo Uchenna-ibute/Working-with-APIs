@@ -11,4 +11,10 @@ const countReservation = () => Promise.resolve(
   },
 );
 
+const nonAsyncCounter = (arr) => {
+  const counter = arr.length;
+  return counter;
+};
+
 exports.countReservation = countReservation;
+exports.nonAsyncCounter = nonAsyncCounter;
