@@ -13,14 +13,16 @@ const displaycomment = async (index) => {
 const addcomment = (index) => {
   const adding = document.getElementById('submit');
   const item_id = Number(index);
-  adding.addEventListener('click', async (e) => {
+  adding.addEventListener('submit', async (e) => {
+    console.log("element submitted")
     const username = document.getElementById('name');
     const comment = document.getElementById('comment');
+    if(username.value && comment.value !== ""){
     saveData(item_id, username.value, comment.value);
-    username.value = '';
-    comment.value = '';
-    displaycomment(index);
+    }
+    reset(index)
     countcoment(index);
+    displaycomment(index);
   });
 };
 
@@ -47,6 +49,13 @@ const closePop = () => {
   });
 };
 
+const reset = () => {
+    const form = document.getElementById('form');
+    form.reset();
+    const commentspace = document.querySelector('.displaycomment');
+    commentspace.innerHTML = '';
+};
+
 export const displaycommentPopup = async (meal, likes, index) => {
   const addcoment = document.querySelectorAll('.comment');
   const mealblur = document.querySelector('.meal');
@@ -71,7 +80,7 @@ export const displaycommentPopup = async (meal, likes, index) => {
     </h3>
     </div>
     <div class="displaycomment flexcolumn"> </div>
-    <form class="flexcolumn form">
+    <form id="form" class="flexcolumn form">
     <input type="text" id='name' placeholder='Your name' required>
     <input type="text" id='comment' placeholder='Your insights' required>
     <button type="submit" id="submit">Submit</button>
