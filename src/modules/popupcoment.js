@@ -45,7 +45,7 @@ const addcomment = (index) => {
 };
 
 const closePop = () => {
-  const closeup = document.querySelector('.pop-up-close-btn');
+  const closeup = document.querySelector('.popup-coment-close-btn');
   closeup.addEventListener('click', () => {
     const mealblur = document.querySelector('.meal');
     const popupclose = document.querySelector('.popup');
@@ -66,7 +66,7 @@ export const displaycommentPopup = async (meal, likes, index) => {
         const html = `
     <div class="item">
       <img class="popupimg" src="${meal.strMealThumb}" alt="food">
-      <p class="pop-up-close-btn">&#10005;</p>
+      <p class="popup-coment-close-btn">&#10005;</p>
     </div>
     <div class="popupname flexcolumn">
       <h1 class='popup_meal-name-card'>${meal.strMeal} <i class="fa-solid fa-heart" id="heart" data-id = "${index}"></i></h1>
@@ -78,7 +78,7 @@ export const displaycommentPopup = async (meal, likes, index) => {
     </h4>
     </div>
     <div class="displaycomment flexcolumn"> </div>
-    <form id="form" class="flexcolumn form"> Add coment
+    <form id="form" class="flexcolumn comentform"> Add coment
     <input type="text" id='name' placeholder='Your name' required>
     <input type="text" id='comment' placeholder='Your insights' required>
     <button type="button" id="submit">Submit</button>
