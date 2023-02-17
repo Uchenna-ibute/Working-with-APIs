@@ -32,6 +32,10 @@ nav ul {
   align-items: center;
 }
 
+li {
+  list-style: none;
+}
+
 nav li {
   list-style: none;
   margin: 3px;
@@ -99,9 +103,9 @@ main {
 
 .name h3 {
   font-size: 1.4rem;
+  margin-bottom: 20px;
 }
 
-.name h3,
 .total,
 .comment {
   margin-bottom: 20px;
@@ -115,10 +119,6 @@ main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
-}
-
-li {
-  list-style: none;
 }
 
 .fa-heart {
@@ -139,7 +139,6 @@ li {
 .popup {
   position: fixed;
   box-sizing: border-box;
-  display: flex;
   flex-direction: column;
   align-items: center;
   gap: 12px;
@@ -173,6 +172,7 @@ li {
   margin-top: 3px;
   gap: 5px;
 }
+
 .displaycomment {
   height: 8vh;
   overflow: auto;
@@ -202,10 +202,6 @@ li {
   z-index: 1;
   width: fit-content;
   height: fit-content;
-}
-
-.name h3 {
-  font-size: 1.4rem;
 }
 
 @media screen and (max-width: 800px) {
