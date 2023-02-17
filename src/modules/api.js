@@ -3,7 +3,6 @@ export const meals = async () => {
     'https://www.themealdb.com/api/json/v1/1/filter.php?i=chicken_breast',
   );
   const data = await res.json();
-  // console.log(data);
   return data;
 };
 

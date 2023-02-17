@@ -2,8 +2,9 @@ import './style.css';
 import { meals } from './modules/api.js';
 import { likeItem, incrementLikes } from './modules/like.js';
 import { display } from './modules/home.js';
+import countReservation from './modules/reservationCounter.js';
 import {
-  displayReservation, countReservation, displayReservationPopUp,
+  displayReservation, displayReservationPopUp,
   postYourReservation, resetFormAndReservationDiv,
 } from './modules/reservation.js';
 
@@ -77,7 +78,3 @@ reservationPopup.addEventListener('click', async (event) => {
     }
   }
 });
-
-// window.addEventListener('load', () => {
-//   reservationPopup.style.display = 'none';
-// });
