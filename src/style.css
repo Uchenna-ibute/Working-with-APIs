@@ -19,6 +19,7 @@ footer {
 a {
   text-decoration: none;
   color: white;
+  cursor: pointer;
 }
 
 nav {
@@ -54,16 +55,36 @@ nav li {
   font-weight: bold;
 }
 
+.name h3,
+.total,
+.comment {
+  margin-bottom: 20px;
+}
+
 .comment {
   color: black;
   border: 1px solid;
-  padding: 5px 10px;
+  padding: 10px 15px;
+  transition: 1s ease-in;
+  font-weight: bold;
+}
+
+.comment:hover {
+  background-color: rgb(2, 214, 2);
+  color: white;
 }
 
 .reservation {
   color: black;
   border: 1px solid;
-  padding: 5px 10px;
+  padding: 10px 15px;
+  font-weight: bold;
+  transition: 1s ease-in;
+}
+
+.reservation:hover {
+  background-color: rgb(2, 214, 2);
+  color: white;
 }
 
 .title {
@@ -101,12 +122,6 @@ main {
   font-size: 1.4rem;
 }
 
-.name h3,
-.total,
-.comment {
-  margin-bottom: 20px;
-}
-
 .name i {
   margin-left: 20px;
 }
@@ -129,8 +144,214 @@ main {
   color: gray;
 }
 
+.reservation-popup-section {
+  display: none;
+  position: fixed;
+  top: 10px;
+  right: 10%;
+  left: 10%;
+  flex-direction: column;
+  z-index: 3;
+  height: 710px;
+  width: 70%;
+  margin: auto;
+  background-color: white;
+
+  /* overflow: auto; */
+  margin-bottom: 20px;
+  border-radius: 15px;
+  padding-bottom: 30px;
+  border: 2px solid rgb(3, 187, 3);
+}
+
+.reservation-popup {
+  height: 100%;
+  width: 100%;
+  margin: auto;
+}
+
+.food-image-popup {
+  border-radius: 50%;
+  height: 250px;
+  margin-top: 15px;
+  margin-left: 50px;
+}
+
+.image-close-btn {
+  display: flex;
+}
+
+.pop-up-close-btn {
+  font-size: 50px;
+  font-weight: bold;
+  position: absolute;
+  left: 90%;
+  top: 20px;
+  cursor: pointer;
+  color: #017533;
+}
+
+.reservation-card {
+  width: 100%;
+  height: 100%;
+  margin: auto;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.all-reservations {
+  height: 200px;
+  width: 400px;
+  overflow: auto;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.form {
+  align-self: flex-start;
+  margin-right: -100px;
+}
+
+input {
+  padding: 7px;
+  margin: 0;
+  width: 80%;
+  background-color: rgb(2, 214, 2);
+}
+
+.reserve-button {
+  width: 100px;
+  outline: none;
+  color: black;
+  border-radius: 25px;
+  border: 0;
+  font-weight: bold;
+  transition: 1s;
+  background-color: white;
+  background-color: rgb(56, 226, 56);
+  cursor: pointer;
+}
+
+.reserve-button:active {
+  background-color: rgb(56, 226, 56);
+  color: white;
+}
+
+.reserve-button:hover {
+  background-color: rgb(87, 86, 86);
+  color: rgb(56, 226, 56);
+}
+
+.spacing-in-popup {
+  margin: 4px;
+  text-align: center;
+}
+
+.h2-size {
+  font-size: 24px;
+}
+
+.input {
+  padding: 10px 45px;
+  width: 290px;
+  outline: none;
+  color: black;
+  border-radius: 25px;
+  text-align: center;
+  border: 0;
+  background-color: rgb(178, 237, 178);
+  transition: 1s;
+}
+
+.input:hover {
+  background-color: rgb(249, 212, 212);
+}
+
+.input:focus {
+  border-color: #6fb98f;
+  color: black;
+}
+
+.p-font-size {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.all-contibutors {
+  display: flex;
+  flex-direction: column;
+}
+
+.creator:hover {
+  text-decoration: underline;
+  font-weight: lighter;
+}
+
+.overlay {
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.9);
+  pointer-events: none;
+}
+
 @media screen and (max-width: 800px) {
   .wrap {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .pop-up-close-btn {
+    font-size: 35px;
+    position: absolute;
+    left: 90%;
+    z-index: 5;
+  }
+
+  .all-reservations {
+    height: 200px;
+    width: 60%;
+    overflow: auto;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+}
+
+@media (max-width: 430px) {
+  .pop-up-close-btn {
+    font-size: 20px;
+    position: absolute;
+    left: 80%;
+    z-index: 5;
+  }
+
+  form {
+    width: 200px;
+  }
+
+  .input {
+    padding: 7px;
+    width: 80%;
+  }
+
+  .food-image-popup {
+    border-radius: 50%;
+    height: 150px;
+    margin-top: 35px;
+    margin-left: 0;
+  }
+
+  .all-reservations {
+    height: 200px;
+    width: 60%;
+    overflow: auto;
+    margin-bottom: 15px;
+    text-align: center;
   }
 }
