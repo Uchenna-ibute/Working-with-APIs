@@ -129,8 +129,6 @@ main {
   color: gray;
 }
 
-/* comment styling start here */
-
 .comment img {
   width: 100%;
   display: block;
@@ -143,7 +141,6 @@ main {
   align-items: center;
   gap: 12px;
   width: 30.1%;
-  height: fit-content;
   left: 30%;
   top: 3%;
   right: 5%;
@@ -162,6 +159,10 @@ main {
   border-radius: 16px;
 }
 
+.popupname h1 {
+  font-size: 20px;
+}
+
 .flexcolumn {
   display: flex;
   flex-direction: column;
@@ -169,8 +170,8 @@ main {
 }
 
 .form {
-  margin-top: 3px;
-  gap: 5px;
+  margin-top: 2px;
+  gap: 2px;
 }
 
 .displaycomment {
@@ -200,8 +201,6 @@ main {
 .close {
   position: absolute;
   z-index: 1;
-  width: fit-content;
-  height: fit-content;
 }
 
 @media screen and (max-width: 800px) {
