@@ -2,7 +2,7 @@ import './style.css';
 import { meals } from './modules/api.js';
 import { likeItem, incrementLikes } from './modules/like.js';
 import { display } from './modules/home.js';
-import { displaycommentPopup } from './modules/popupcoment';
+import { displaycommentPopup } from './modules/popupcoment.js';
 
 meals().then(async (data) => {
   const meal = [...data.meals];
