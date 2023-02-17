@@ -1,7 +1,7 @@
 # Working with APIs
 # 📗 Table of Contents
 
-- [LeaderBoard-Project](#leaderboard-project)
+- [Working with APIs](#working-with-apis)
 - [📗 Table of Contents](#-table-of-contents)
 - [📖 \[Working-with-APIs\] ](#-working-with-apis-)
   - [🛠 Built With ](#-built-with-)
@@ -17,6 +17,7 @@
     - [Deployment](#deployment)
   - [👥 Authors ](#-authors-)
   - [🔭 Future Features ](#-future-features-)
+  - [🔭 Watch Video Explanation here ](#-watch-video-explanation-here-)
   - [🤝 Contributing ](#-contributing-)
   - [⭐️ Show your support ](#️-show-your-support-)
   - [🙏 Acknowledgments ](#-acknowledgments-)
@@ -135,7 +136,7 @@ A web browser
 - GitHub: [@githubhandle](https://github.com/coderacheal)
 
  
-👤 **Christian**
+👤 **Christian Hakizimana**
 
 - GitHub: [@githubhandle](https://github.com/hakichris)
 
@@ -153,6 +154,12 @@ A web browser
 ## 🔭 Future Features <a name="future-features"></a>
 
 - **Making API Calls**
+
+
+
+## 🔭 Watch Video Explanation here <a name="video-demo"></a>
+
+- **Watch explanation of the features** [here](https://drive.google.com/file/d/1Y8UT4OrmcxHsAHnomiQfhpvLxoPcnDgm/view?usp=sharing)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
