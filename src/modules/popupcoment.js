@@ -94,4 +94,3 @@ export const displaycommentPopup = async (meal, likes, index) => {
   });
 };
 
-module.export;
