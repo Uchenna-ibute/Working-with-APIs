@@ -161,7 +161,7 @@ main {
   flex-direction: column;
   align-items: center;
   gap: 12px;
-  width: 30.1%;
+  width: 27%;
   left: 30%;
   top: 3%;
   right: 5%;
@@ -177,6 +177,7 @@ main {
 .popupimg {
   align-self: center;
   width: 30vw;
+  height: 54vh;
   border-radius: 16px;
 }
 
