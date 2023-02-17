@@ -5,7 +5,7 @@
 
 import homePageCount from '../modules/homePage.js';
 
-describe('test for meal: ', () => {
+describe('test for meal and coment: ', () => {
   test('9 meals Added', () => {
     document.body.innerHTML = `
      <div class="wrap">

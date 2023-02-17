@@ -2,6 +2,7 @@ import './style.css';
 import { meals } from './modules/api.js';
 import { likeItem, incrementLikes } from './modules/like.js';
 import { display } from './modules/home.js';
+import { displaycommentPopup } from './modules/popupcoment.js';
 import countReservation from './modules/reservationCounter.js';
 import {
   displayReservation, displayReservationPopUp,
@@ -26,6 +27,9 @@ meals().then(async (data) => {
       }
     });
     display(value, liked, index);
+    // popup start here
+    displaycommentPopup(value, liked, index);
+    // popup ends here
   });
 
   const heart = document.querySelectorAll('#heart');

@@ -33,6 +33,10 @@ nav ul {
   align-items: center;
 }
 
+li {
+  list-style: none;
+}
+
 nav li {
   list-style: none;
   margin: 3px;
@@ -67,6 +71,11 @@ nav li {
   padding: 10px 15px;
   transition: 1s ease-in;
   font-weight: bold;
+}
+
+.total,
+.comment {
+  margin-bottom: 20px;
 }
 
 .comment:hover {
@@ -120,6 +129,7 @@ main {
 
 .name h3 {
   font-size: 1.4rem;
+  margin-bottom: 20px;
 }
 
 .name i {
@@ -132,16 +142,86 @@ main {
   gap: 2rem;
 }
 
-.wrap li {
-  list-style: none;
-}
-
 .fa-heart {
   cursor: pointer;
 }
 
 .fa-heart:hover {
   color: gray;
+}
+
+.comment img {
+  width: 100%;
+  display: block;
+}
+
+.popup {
+  position: fixed;
+  box-sizing: border-box;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 30.1%;
+  left: 30%;
+  top: 3%;
+  right: 5%;
+  bottom: 5%;
+  background: rgb(225, 222, 222);
+  border: 1px solid #dfe1e6;
+  border-radius: 16px;
+  backdrop-filter: blur(10px);
+  z-index: 22;
+  display: none;
+}
+
+.popupimg {
+  align-self: center;
+  width: 30vw;
+  border-radius: 16px;
+}
+
+.popupname h1 {
+  font-size: 20px;
+}
+
+.flexcolumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.comentform {
+  margin-top: 4px;
+  gap: 4px;
+}
+
+.displaycomment {
+  height: 8vh;
+  overflow: auto;
+  background-color: #fdfdfd;
+}
+
+.popup-coment-close-btn {
+  left: 510px;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+}
+
+.item {
+  display: flex;
+  width: 50%;
+}
+
+.count {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+.close {
+  position: absolute;
+  z-index: 1;
 }
 
 .reservation-popup-section {
