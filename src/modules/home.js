@@ -13,6 +13,8 @@ export const display = (meal, likes, index) => {
     <div class="comment-and-reservation">
       <button class="comment" id ="${index}">Comment</button>
       <a href="#" class="reservation">Reservation</a>
+      <a class="comment" data-id = "${index}">Comment</a>
+      <a class="reservation" id=${meal.idMeal}>Reservation</a>
     </div>
   </div>
   </div>`;

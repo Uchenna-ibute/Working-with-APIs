@@ -2,6 +2,7 @@
  * @jest-environment jsdom
  */
 /* eslint-disable import/no-unresolved */
+
 import homePageCount from '../modules/homePage.js';
 
 describe('test for meal and coment: ', () => {
