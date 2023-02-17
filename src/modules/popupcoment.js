@@ -6,7 +6,7 @@ const displaycomment = async (index) => {
   comentData.forEach((coment) => {
     const eachComment = document.createElement('p');
     displaycomm.appendChild(eachComment);
-    eachComment.innerHTML = `${coment.creation_date} : ${coment.username} : ${coment.comment}`;
+    eachComment.innerHTML = `${coment.creation_date}  ${coment.username} : ${coment.comment}`;
   });
 };
 

@@ -54,7 +54,7 @@
 ## 🚀 Live Demo <a name="live-demo"></a>
 
 
-- [Live Demo Link](https://uchenna-ibute.github.io/Working-with-APIs/dist)
+- [Live Demo Link](https://uchenna-ibute.github.io/Working-with-APIs//dist)
 
 Please note that the live demo link is not yet active
 
