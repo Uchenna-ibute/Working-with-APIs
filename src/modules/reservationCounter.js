@@ -5,6 +5,4 @@ const countReservation = async (itemId) => {
   return counter;
 };
 
-
-
 export default countReservation;
