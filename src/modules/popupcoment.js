@@ -16,12 +16,12 @@ const addcomment = (index) => {
   adding.addEventListener('click', async (e) => {
     const username = document.getElementById('name');
     const comment = document.getElementById('comment');
-    if(username.value && comment.value !== ""){
-    saveData(item_id, username.value, comment.value);
-    }
+    if(username.value && comment.value){
+    await saveData(item_id, username.value, comment.value);
     reset(index)
-    countcoment(index);
-    displaycomment(index);
+    await countcoment(index);
+    await displaycomment(index);
+  }
   });
 };
 
