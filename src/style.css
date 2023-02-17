@@ -73,6 +73,11 @@ nav li {
   font-weight: bold;
 }
 
+.total,
+.comment {
+  margin-bottom: 20px;
+}
+
 .comment:hover {
   background-color: rgb(2, 214, 2);
   color: white;
@@ -124,11 +129,6 @@ main {
 
 .name h3 {
   font-size: 1.4rem;
-  margin-bottom: 20px;
-}
-
-.total,
-.comment {
   margin-bottom: 20px;
 }
 
@@ -223,6 +223,7 @@ main {
   position: absolute;
   z-index: 1;
 }
+
 .reservation-popup-section {
   display: none;
   position: fixed;
