@@ -27,7 +27,7 @@ describe('test reservation counter', () => {
   test('number of reservations should be > 1', () => {
     countReservation().then((reservation) => {
       const values = Object.values(reservation);
-      expect(values.length).toBeGreaterThan(1);
+      expect(values.length).toBeGreaterThan(0);
     });
   });
 

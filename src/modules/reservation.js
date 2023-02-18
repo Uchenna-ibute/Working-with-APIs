@@ -59,8 +59,8 @@ export const displayReservation = async (itemId) => {
 export const resetFormAndReservationDiv = (event) => {
   if (event.target.className === 'reserve-button') {
     const form = document.getElementById('form');
-    form.reset();
     const reservespace = document.getElementById('all-reservations');
+    form.reset();
     reservespace.innerHTML = '';
   }
 };

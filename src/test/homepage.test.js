@@ -3,7 +3,7 @@
  */
 /* eslint-disable import/no-unresolved */
 
-import homePageCount from '../modules/homePage.js';
+import homePageCount from '../modules/homepage.js';
 
 describe('test for meal and coment: ', () => {
   test('9 meals Added', () => {
